@@ -56,10 +56,10 @@ The objectives of this lab were to:
 
 | VLAN | Department | Network | Default Gateway |
 |-----:|------------|---------|-----------------|
-| 10 | Production / Admin | 192.168.10.0/24 | 192.168.10.1 |
-| 20 | Sales / Staff | 192.168.20.0/24 | 192.168.20.1 |
-| 30 | HR / IT | 192.168.30.0/24 | 192.168.30.1 |
-| 40 | Accounting / Access | 192.168.40.0/24 | 192.168.40.1
+| 10 | Production / COO | 192.168.10.0/24 | 192.168.10.1 |
+| 20 | HR / Finance | 192.168.20.0/24 | 192.168.20.1 |
+| 30 |Staff / Access| 192.168.30.0/24 | 192.168.30.1 |
+| 40 | IT / Servers Farm| 192.168.40.0/24 | 192.168.40.1
 
 The VLANs provide logical segmentation of the network and create separate broadcast domains.
 
@@ -73,13 +73,8 @@ vlan 10
 name Production
 
 vlan 20
-name Sales
-
-vlan 30
 name HR
 
-vlan 40
-name Admin
 
 The VLANs were created on both access switches so that the same VLANs could be extended across the network.
 
@@ -132,6 +127,16 @@ ip address 192.168.10.1 255.255.255.0
 The Router interface was verified and verification confirmed that the VLAN Subinterfaces were operational and in an up/up state.
 
 ![Router interface verification](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/tree/main/Screenshots)
+
+Connectivity was tested by pinging different IPs in different Vlans. 
+
+E.g:
+PC1 ping 192.168.30.2
+
+Successful replies confirmed inter-VLAN routing.
+
+![Connectivity Tests](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/tree/main/Screenshots)
+
 
 
 
