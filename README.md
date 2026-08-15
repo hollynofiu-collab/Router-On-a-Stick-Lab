@@ -50,7 +50,7 @@ The objectives of this lab were to:
 
 -Trunk links between network devices.
 
-![Network Topology](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/upload/main/Screenshots)
+![Network Topology](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/tree/main/Screenshots)
 
 
 
