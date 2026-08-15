@@ -117,7 +117,7 @@ A second trunk was configured between the access switches to extend VLANs across
 
 ![Trunk config/verification](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/tree/main/Screenshots)
 
-## 5. Router-on-a-Stick Configuration
+## 4. Router-on-a-Stick Configuration
 
 Router-on-a-Stick was used to provide inter-VLAN routing.
 
