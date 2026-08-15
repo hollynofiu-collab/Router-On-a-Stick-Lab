@@ -50,7 +50,7 @@ The objectives of this lab were to:
 
 -Trunk links between network devices.
 
-![Network Topology](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/blob/main/Screenshots/router%20on%20a%20stick.png)
+![Network Topology](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/tree/main/Screenshots)
 
 ## VLAN Design
 
@@ -83,7 +83,58 @@ name Admin
 
 The VLANs were created on both access switches so that the same VLANs could be extended across the network.
 
-![Vlan config on switch 1](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/blob/main/Screenshots/vlan%20config.png)
+![Vlan config on switch 1](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/tree/main/Screenshots)
+
+
+# 2. Access Port Configuration.
+
+End devices were assigned to their appropriate VLANs using access ports.
+
+Example:
+
+interface range fastEthernet0/1-3
+switchport mode access
+switchport access vlan 10
+
+Additional ports were assigned to VLANs 20, 30, and 40 according to the network design. This ensured that devices connected to an access port belonged to the correct departmental VLAN.
+
+![Access Port config](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/tree/main/Screenshots)
+
+
+## 3. Trunk Configuration
+
+The link between the switch and router was configured as an 802.1Q trunk.
+
+Example:
+
+interface gigabitEthernet0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20,30,40
+
+The trunk carries traffic for multiple VLANs over a single physical connection.
+
+A second trunk was configured between the access switches to extend VLANs across the network.
+
+![Trunk config/verification](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/tree/main/Screenshots)
+
+## 5. Router-on-a-Stick Configuration
+
+Router-on-a-Stick was used to provide inter-VLAN routing.
+
+Instead of requiring a separate physical router interface for every VLAN, multiple logical subinterfaces were created on a single physical router interface.
+
+Example:
+
+interface fastEthernet0/0.10
+encapsulation dot1Q 10
+ip address 192.168.10.1 255.255.255.0
+
+The Router interface was verified and verification confirmed that the VLAN Subinterfaces were operational and in an up/up state.
+
+![Router interface verification](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/tree/main/Screenshots)
+
+
+
 
 
 
