@@ -50,7 +50,43 @@ The objectives of this lab were to:
 
 -Trunk links between network devices.
 
-![Network Topology](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/tree/main/Screenshots)
+![Network Topology](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/blob/main/Screenshots/router%20on%20a%20stick.png)
+
+## VLAN Design
+
+| VLAN | Department | Network | Default Gateway |
+|-----:|------------|---------|-----------------|
+| 10 | Production / Admin | 192.168.10.0/24 | 192.168.10.1 |
+| 20 | Sales / Staff | 192.168.20.0/24 | 192.168.20.1 |
+| 30 | HR / IT | 192.168.30.0/24 | 192.168.30.1 |
+| 40 | Accounting / Access | 192.168.40.0/24 | 192.168.40.1
+
+The VLANs provide logical segmentation of the network and create separate broadcast domains.
+
+# 1. VLAN Configuration
+
+The first step was to create the required VLANs on the switches.
+
+Example:
+
+vlan 10
+name Production
+
+vlan 20
+name Sales
+
+vlan 30
+name HR
+
+vlan 40
+name Admin
+
+The VLANs were created on both access switches so that the same VLANs could be extended across the network.
+
+![Vlan config on switch 1](https://github.com/hollynofiu-collab/Router-On-a-Stick-Lab/blob/main/Screenshots/vlan%20config.png)
+
+
+
 
 
 
