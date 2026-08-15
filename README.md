@@ -87,9 +87,11 @@ End devices were assigned to their appropriate VLANs using access ports.
 
 Example:
 
-interface range fastEthernet0/1-3
-switchport mode access
-switchport access vlan 10
+-interface range fastEthernet0/1-3
+
+-switchport mode access
+
+-switchport access vlan 10
 
 Additional ports were assigned to VLANs 20, 30, and 40 according to the network design. This ensured that devices connected to an access port belonged to the correct departmental VLAN.
 
@@ -102,9 +104,11 @@ The link between the switch and router was configured as an 802.1Q trunk.
 
 Example:
 
-interface gigabitEthernet0/1
-switchport mode trunk
-switchport trunk allowed vlan 10,20,30,40
+-interface gigabitEthernet0/1
+
+-switchport mode trunk
+
+-switchport trunk allowed vlan 10,20,30,40
 
 The trunk carries traffic for multiple VLANs over a single physical connection.
 
@@ -120,9 +124,11 @@ Instead of requiring a separate physical router interface for every VLAN, multip
 
 Example:
 
-interface fastEthernet0/0.10
-encapsulation dot1Q 10
-ip address 192.168.10.1 255.255.255.0
+-interface fastEthernet0/0.10
+
+-encapsulation dot1Q 10
+
+-ip address 192.168.10.1 255.255.255.0
 
 The Router interface was verified and verification confirmed that the VLAN Subinterfaces were operational and in an up/up state.
 
